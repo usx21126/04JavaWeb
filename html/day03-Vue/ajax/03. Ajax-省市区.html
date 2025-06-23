@@ -27,14 +27,17 @@
     <div id="center">
       省:
       <select v-model="province">
+        <option value="0">---请选择---</option>
         <option v-for="p in provinces" :key="p.id" :value="p.id">{{p.name}}</option>
       </select>
       市:
       <select v-model="city">
+        <option value="0">---请选择---</option>
         <option v-for="c in cities" :key="c.id" :value="c.id">{{c.name}}</option>
       </select>
       区:
       <select v-model="area">
+        <option value="0">---请选择---</option>
         <option v-for="a in areas" :key="a.id" :value="a.id">{{a.name}}</option>
       </select>
     </div>
@@ -46,9 +49,9 @@
     createApp({
       data() {
         return {
-          province: '',
-          city: '',
-          area: '',
+          province: 0,
+          city: 0,
+          area: 0,
 
           provinces: [],
           cities: [],
@@ -56,24 +59,35 @@
         };
       },
       methods: {
-        getProvinces() {
-          axios.get("https://web-server.itheima.net/province").then((res) => {
-            console.log(res.data)
-            this.provinces = res.data.data
-            this.province = res.data.data[0].id
-            axios.get('https://web-server.itheima.net/city?pid=' + this.province).then((res) => {
-              this.cities = res.data.data
-              this.city = res.data.data[0].id
-              axios.get("https://web-server.itheima.net/area?cid=" + this.city).then((res) => {
-                this.areas = res.data.data
-                this.area = res.data.data[0].id
-              })
-            }).catch((e) => {
-              console.log(e)
-            })
-          }).catch((e) => {
-            console.log(e);
-          })
+        async getProvinces() {
+          // axios.get("https://web-server.itheima.net/province").then((res) => {
+          //   console.log(res.data)
+          //   this.provinces = res.data.data
+          //   this.province = res.data.data[0].id
+          //   axios.get('https://web-server.itheima.net/city?pid=' + this.province).then((res) => {
+          //     this.cities = res.data.data
+          //     this.city = res.data.data[0].id
+          //     axios.get("https://web-server.itheima.net/area?cid=" + this.city).then((res) => {
+          //       this.areas = res.data.data
+          //       this.area = res.data.data[0].id
+          //     })
+          //   }).catch((e) => {
+          //     console.log(e)
+          //   })
+          // }).catch((e) => {
+          //   console.log(e);
+          // })
+          let presult = await axios.get("https://web-server.itheima.net/province")
+          this.provinces = presult.data.data
+          // this.province = this.provinces[0].id
+
+          let cresult = await axios.get('https://web-server.itheima.net/city?pid=' + this.province)
+          this.cities = cresult.data.data
+          this.city = this.cities[0].id
+
+          let aresult = await axios.get("https://web-server.itheima.net/area?cid=" + this.city)
+          this.areas = aresult.data.data
+          this.area = this.areas[0].id
         }
       },
       mounted() {
