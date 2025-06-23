@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-String</title>
+</head>
+
+<body>
+
+
+    <script>
+        //1. 创建字符串
+        let str = new String("Hello World");
+        let str2 = "Hello World";
+
+        //2. 字符串属性 - length
+        console.log(str.length); // 11
+        console.log(str2.length); // 11
+
+        //3. 字符串方法 - charAt , indexOf , trim , substring
+        console.log(str.charAt(0)); // H
+        console.log(str2.charAt(0)); // H
+        console.log(str.indexOf("World")); // 6
+        console.log(str2.indexOf("World")); // 6
+        console.log(str.trim()); // "Hello World"
+        console.log("  ".trim()); // "Hello World"
+        console.log(str.substring(0, 5)); // Hello
+        console.log(str2.substring(0, 5)); // Hello
+
+    </script>
+</body>
+
+</html>

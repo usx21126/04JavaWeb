@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-BOM</title>
+</head>
+
+<body>
+
+
+    <script>
+        // BOM（Browser Object Model）浏览器对象模型
+        // BOM是浏览器提供的JavaScript对象集合，允许脚本与浏览器进行交互。
+
+        // 1. window对象
+        console.log(window); // 浏览器窗口对象
+
+        // 2. alert()方法
+        alert("Hello, World!"); // 弹出警告框
+
+        // 3. confirm()方法
+        const userConfirmed = confirm("Are you sure?");
+        console.log(userConfirmed); // 用户点击确定返回true，取消返回false
+
+        // 4. prompt()方法
+        const userInput = prompt("Please enter your name:");
+        console.log(userInput); // 用户输入的内容
+
+        // 5.setInterval()方法
+        let count = 0;
+        const intervalId = setInterval(() => {
+            count++;
+            console.log(`Count: ${count}`);
+            if (count === 5) {
+                clearInterval(intervalId); // 停止计时器
+                console.log("Interval cleared.");
+            }
+        }, 1000); // 每秒执行一次
+
+        //6. setTimeout()方法
+        setTimeout(() => {
+            console.log("This message appears after 3 seconds.");
+        }, 3000); // 3秒后执行
+
+        // 7. location对象
+        console.log(location.href); // 当前页面的URL
+        console.log(location.hostname); // 当前页面的主机名
+        console.log(location.pathname); // 当前页面的路径
+
+    </script>
+</body>
+
+</html>

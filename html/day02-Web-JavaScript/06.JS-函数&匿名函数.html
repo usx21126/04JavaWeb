@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-函数</title>
+</head>
+
+<body>
+    <script>
+        // 函数定义
+        function add(a, b) {
+            return a + b;
+        }
+
+        // 函数调用
+        let result = add(5, 10);
+        console.log(result); // 输出: 15
+
+        // 函数表达式
+        const multiply = function (x, y) {
+            return x * y;
+        };
+
+        console.log(multiply(4, 5)); // 输出: 20
+
+        // 匿名函数
+        (function () {
+            console.log("这是一个匿名函数");
+        })();
+
+        // 箭头函数
+        const subtract = (x, y) => x - y;
+
+        console.log(subtract(10, 3)); // 输出: 7
+
+        x = ((a, b) => { return a + b })(10, 20); // 这是一个箭头函数的另一种写法
+        console.log(x);
+
+        // 函数作为参数传递
+        function executeFunction(fn) {
+            fn();
+        }
+
+        executeFunction(() => console.log("执行了传入的函数"));
+
+
+    </script>
+</body>
+
+</html>

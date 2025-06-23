@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax-Axios</title>
+</head>
+
+<body>
+
+    <input type="button" value="获取数据GET" id="btnGet">
+
+    <input type="button" value="删除数据POST" id="btnPost">
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+
+        //GET请求 https://mock.apifox.cn/m1/3083103-0-default/emps/list
+        document.querySelector('#btnGet').addEventListener('click', () => {
+            axios({
+                method: 'GET',
+                url: 'https://mock.apifox.cn/m1/3128855-0-default/emp/list',
+                params:{name:this.name}
+            }).then((data) => {
+                document.querySelector('body').innerHTML = JSON.stringify(data)
+                console.log(data);
+            }).catch((e) => {
+                console.log(e);
+            })
+        })
+
+        //POST请求 https://mock.apifox.cn/m1/3083103-0-default/emps/update
+        document.querySelector('#btnPost').addEventListener('click',()=>{
+            axios({
+                method:'POST',
+                url:'https://mock.apifox.cn/m1/3083103-0-default/emps/update',
+                data:'id=1'
+            }).then((data)=>{
+                console.log(data);                
+            }).catch((e)=>{
+                console.log(e);
+            })
+        })
+        //https://web-server.itheima.net/emps/list
+	
+	    // https://web-server.itheima.net/emps/list?name=xxx&gender=xxx&job=xxx
+	
+
+	
+	    // 省 : https://web-server.itheima.net/province
+	
+	    // 市 : https://web-server.itheima.net/city?pid=xxx
+
+	    // 区 : https://web-server.itheima.net/area?cid=xxx
+
+
+    </script>
+</body>
+
+</html>

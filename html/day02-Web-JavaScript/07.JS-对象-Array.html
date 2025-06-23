@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-Array</title>
+</head>
+
+<body>
+    <script>
+        //1. 定义数组
+        let arr = new Array(1, 2, 3, 4, 5);
+        let arr2 = [1, 2, 3, 4, 5];
+        arr[10] = 11;
+        console.log(arr);
+
+        //2. 数组属性 - length
+        console.log(arr.length); // 输出数组的长度
+        console.log(arr2.length); // 输出数组的长度
+        console.log('--------------------');
+
+        //3. 数组方法 - forEach , map,  push , pop , unshift , shift , splice
+        // forEach: 遍历数组
+        arr.forEach(function (item, index) {
+            console.log(`Index: ${index}, Item: ${item}`);
+        });
+
+        // map: 创建一个新数组，包含调用函数处理后的每个元素
+        let squared = arr.map(function (item) {
+            return item * item;
+        });
+        console.log(squared); // 输出: [1, 4, 9, 16, 25]
+
+        // push: 在数组末尾添加一个或多个元素
+        arr.push(6);
+        console.log(arr); // 输出: [1, 2, 3, 4, 5, 6]
+
+        // pop: 删除数组末尾的元素，并返回该元素
+        let lastElement = arr.pop();
+        console.log(lastElement); // 输出: 6
+        console.log(arr); // 输出: [1, 2, 3, 4, 5]
+
+        // unshift: 在数组开头添加一个或多个元素
+        arr.unshift(0);
+        console.log(arr); // 输出: [0, 1, 2, 3, 4, 5]
+
+        // shift: 删除数组开头的元素，并返回该元素
+        let firstElement = arr.shift();
+        console.log(firstElement); // 输出: 0
+        console.log(arr); // 输出: [1, 2, 3, 4, 5]
+
+        // splice: 从数组中添加或删除元素
+        arr.splice(2, 1, 10); // 从索引2开始删除1个元素，并添加10
+        console.log(arr); // 输出: [1, 2, 10, 4, 5]
+
+        // slice: 返回数组的一个片段
+        let slicedArray = arr.slice(1, 3); // 从索引1到索引3（不包括3）
+        console.log(slicedArray); // 输出: [2, 10]
+
+    </script>
+</body>
+
+</html>

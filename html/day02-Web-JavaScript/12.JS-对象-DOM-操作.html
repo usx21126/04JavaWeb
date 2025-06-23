@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-DOM</title>
+</head>
+
+<body>
+    <span id="sid">DOM元素1</span><br>
+    <span class="txt">DOM元素2</span><br>
+    <span class="txt">DOM元素3</span><br>
+
+    <script>
+        let s1 = document.querySelector('#sid')
+        let s2 = document.querySelector('.txt')
+        let s3 = document.querySelectorAll('.txt')
+        console.log(s1); // <span id="sid">DOM元素1</span>
+        console.log(s2); // <span class="txt">DOM元素2</span>
+        console.log(s3); // NodeList(2) [span.txt, span.txt]
+        s1.innerHTML = 'Hello Dom'
+        s3.forEach((item, index) => {
+            item.innerHTML = `Hello ${index + 1}`
+        })
+
+    </script>
+</body>
+
+</html>

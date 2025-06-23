@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-运算符</title>
+</head>
+
+<body>
+
+    <script>
+        let age = 20;
+        let _age = '20';
+        let $age = 20;
+
+        alert(age == _age); //true
+        alert(age === _age);    //false
+        alert(age === $age);    //true
+
+        //类型转换 - 字符串 <-> 数字
+        // alert(typeof ('10' - 1));    //number
+        // alert(typeof ('10' + 1));    //string
+        // alert(parseInt('123'));  //123
+        // alert(parseInt('12A3')); //12
+        // alert(parseInt('A123')); //NaN
+        let a = NaN;
+        let b = NaN;
+        console.log(a != a); // true
+        console.log(a === b); // false
+        let c = b.toString(); // "NaN"
+        console.log(c); // "NaN"
+        // 类型转换 - 其他类型转为boolean
+        // if(0){
+        //     alert("0 转换为false");
+        // }
+        // if(NaN){
+        //     alert("NaN 转换为false");
+        // }
+        // if(1){
+        //     alert("除0和NaN其他数字都转为 true");
+        // }
+
+        // if(""){
+        //     alert("空字符串为 false, 其他都是true");
+        // }
+
+        // if(null){
+        //     alert("null 转化为false");
+        // }
+        // if(undefined){
+        //     alert("undefined 转化为false");
+        // }
+    </script>
+</body>
+
+</html>

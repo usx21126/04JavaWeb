@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        您好, 支付完成, <span id="time">10:00</span> 之后将自动跳转至 <a href="https://www.jd.com">官网</a> 首页 ~
+    </div>
+
+    <script>
+        setInterval(() => {
+            let time = document.querySelector('#time')
+            let t = time.innerHTML.split(':')
+            let minutes = parseInt(t[0])
+            let seconds = parseInt(t[1])
+            if (seconds === 0) {
+                if (minutes === 0) {
+                    window.location.href = 'https://www.jd.com'
+                } else {
+                    minutes--
+                    seconds = 59
+                }
+            } else {
+                seconds--
+            }
+            time.innerHTML = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        }, 1000);
+    </script>
+</body>
+
+</html>
