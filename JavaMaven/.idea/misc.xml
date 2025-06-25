@@ -12,6 +12,10 @@
         <option value="$PROJECT_DIR$/servlet-demo/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-web-quickstart01/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-web-quickstart02/pom.xml" />
+        <option value="$PROJECT_DIR$/day05-code/springboot-web-quickstart01/pom.xml" />
+        <option value="$PROJECT_DIR$/day05-code/springboot-web-quickstart02/pom.xml" />
+        <option value="$PROJECT_DIR$/day05-code/servlet-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/tlias-web-manager/pom.xml" />
       </list>
     </option>
   </component>

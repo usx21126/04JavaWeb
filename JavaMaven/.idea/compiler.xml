@@ -6,9 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="servlet-demo" />
         <module name="springboot-web-quickstart01" />
+        <module name="servlet-demo" />
         <module name="springboot-web-quickstart02" />
+      </profile>
+      <profile name="Annotation profile for tlias-web-manager" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../../../lib/apache-maven-3.9.4-bin/apache-maven-3.9.4/repo/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="tlias-web-manager" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,6 +32,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="springboot-web-quickstart01" options="-parameters" />
       <module name="springboot-web-quickstart02" options="-parameters" />
+      <module name="tlias-web-manager" options="-parameters" />
     </option>
   </component>
 </project>
