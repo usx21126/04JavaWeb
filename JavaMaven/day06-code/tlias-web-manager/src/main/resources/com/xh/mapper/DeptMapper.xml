@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xh.mapper.DeptMapper">
+    <select id="getAllDepts" resultType="com.xh.entity.Dept">
+        select id,name,create_time createTime,update_time updateTime from dept
+    </select>
+</mapper>
