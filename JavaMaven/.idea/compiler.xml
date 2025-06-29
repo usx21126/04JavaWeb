@@ -6,11 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="jdbc-demo" />
-        <module name="springboot-mybatis-quickstart" />
-        <module name="springboot-web-quickstart01" />
-        <module name="servlet-demo" />
-        <module name="springboot-web-quickstart02" />
       </profile>
       <profile name="Annotation profile for tlias-web-manager" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -23,21 +18,15 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="maven-project01" target="21" />
-      <module name="maven-project02" target="21" />
-      <module name="maven-projectA" target="21" />
-      <module name="maven-projectB" target="21" />
-      <module name="maven-projectC" target="21" />
-      <module name="springboor-mybatis-quickstart" target="21" />
+      <module name="springboot-mybatis-quickstart" target="21" />
+      <module name="tlias-web-manager (1)" target="21" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="springboor-mybatis-quickstart" options="-parameters" />
       <module name="springboot-mybatis-quickstart" options="-parameters" />
-      <module name="springboot-web-quickstart01" options="-parameters" />
-      <module name="springboot-web-quickstart02" options="-parameters" />
       <module name="tlias-web-manager" options="-parameters" />
+      <module name="tlias-web-manager (1)" options="-parameters" />
     </option>
   </component>
 </project>
