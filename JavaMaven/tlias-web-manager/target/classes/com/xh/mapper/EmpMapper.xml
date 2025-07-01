@@ -7,6 +7,29 @@
         values (null, #{username}, #{password}, #{name}, #{gender}, #{phone}, #{job}, #{salary}, #{image},
                 #{entryDate}, #{deptId}, #{createTime}, #{updateTime})
     </insert>
+    <update id="updateEmp">
+        update emp
+        <set>
+            <if test="username != null and username != ''">username = #{username},</if>
+            <if test="password != null and password != ''">password = #{password},</if>
+            <if test="name != null and name != ''">name = #{name},</if>
+            <if test="gender != null">gender = #{gender},</if>
+            <if test="phone != null and phone != ''">phone = #{phone},</if>
+            <if test="job != null">job = #{job},</if>
+            <if test="salary != null">salary = #{salary},</if>
+            <if test="image != null and image != ''">image = #{image},</if>
+            <if test="entryDate != null">entry_date = #{entryDate},</if>
+            <if test="deptId != null">dept_id = #{deptId},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </set>
+        where id = #{id}
+    </update>
+    <delete id="deleteEmps">
+        delete from emp where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
 
     <select id="getEmps" resultType="com.xh.entity.Emp" parameterType="com.xh.entity.EmpQueryParam">
         SELECT emp.*,dept.name deptName FROM emp
@@ -48,5 +71,29 @@
                 AND emp.entry_date <![CDATA[ <= ]]> #{end}
             </if>
         </where>
+    </select>
+    <select id="getEmpById" resultType="com.xh.entity.Emp">
+        select * from emp where id = #{id}
+    </select>
+    <resultMap id="getEmpById2_map" type="com.xh.entity.Emp" autoMapping="true">
+        <id column="id" property="id"></id>
+        <collection property="exprList" ofType="com.xh.entity.EmpExpr">
+            <id column="e_id" property="id"></id>
+            <result column="e_begin" property="begin"></result>
+            <result column="e_end" property="end"></result>
+            <result column="e_company" property="company"></result>
+            <result column="e_job" property="job"></result>
+            <result column="e_emp_id" property="empId"></result>
+        </collection>
+    </resultMap>
+    <select id="getEmpById2" resultMap="getEmpById2_map">
+        select emp.*,
+               emp_expr.id e_id,
+               emp_expr.begin e_begin,
+               emp_expr.end e_end,
+               emp_expr.company e_company,
+               emp_expr.job e_job,
+               emp_expr.emp_id e_emp_id
+        from emp left join emp_expr on emp.id = emp_expr.emp_id where emp.id = #{id}
     </select>
 </mapper>

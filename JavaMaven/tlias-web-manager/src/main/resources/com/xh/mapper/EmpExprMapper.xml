@@ -12,4 +12,16 @@
             (#{expr.empId},#{expr.begin},#{expr.end},#{expr.company},#{expr.job})
         </foreach>
     </insert>
+    <delete id="deleteEmpExprs">
+        delete from emp_expr where emp_id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+    <delete id="deleteEmpExprById">
+        delete from emp_expr where emp_id = #{id}
+    </delete>
+    <select id="getEmpExprById" resultType="com.xh.entity.EmpExpr">
+        select * from emp_expr where emp_id = #{id}
+    </select>
 </mapper>

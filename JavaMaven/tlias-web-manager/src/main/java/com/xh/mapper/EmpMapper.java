@@ -30,4 +30,30 @@ public interface EmpMapper {
      * @return
      */
     Integer getCount(EmpQueryParam param);
+
+    /**
+     * 根据id列表删除数据
+     * @param ids
+     */
+    void deleteEmps(List<Integer> ids);
+
+    /**
+     * 根据id获取员工数据（不含员工经历）
+     * @param id
+     * @return
+     */
+    Emp getEmpById(Integer id);
+
+    /**
+     * 根据id获取员工数据
+     * @param id
+     * @return
+     */
+    Emp getEmpById2(Integer id);
+
+    /**
+     * 更新员工表
+     * @param emp
+     */
+    void updateEmp(Emp emp);
 }

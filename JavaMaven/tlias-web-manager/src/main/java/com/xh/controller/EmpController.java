@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Slf4j
 @RestController
 @RequestMapping("/emps")
@@ -37,4 +39,41 @@ public class EmpController {
         empService.addEmp(emp);
         return Result.success();
     }
+
+    /**
+     * 删除员工
+     * @param ids
+     * @return
+     */
+    @DeleteMapping
+    public Result deleteEmps(@RequestParam List<Integer> ids) {
+        log.info("ids={}",ids);
+        empService.deleteEmps(ids);
+        return Result.success();
+    }
+
+    /**
+     * 查询员工及工作经历
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    public Result getEmpById(@PathVariable Integer id) {
+        log.info("id={}",id);
+        Emp emp= empService.getEmpById(id);
+        return Result.success(emp);
+    }
+
+    /**
+     * 修改员工
+     * @param emp
+     * @return
+     */
+    @PutMapping
+    public Result updateEmp(@RequestBody Emp emp) {
+        log.info("emp={}",emp);
+        empService.updateEmp(emp);
+        return Result.success();
+    }
+
 }

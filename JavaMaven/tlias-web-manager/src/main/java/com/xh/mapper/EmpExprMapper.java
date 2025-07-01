@@ -14,8 +14,14 @@ public interface EmpExprMapper {
     void addEmpExpr(EmpExpr empExpr);
 
     /**
-     * 批量添加员工经理
+     * 批量添加员工经历
      * @param exprList
      */
     void addEmpExprBatch(List<EmpExpr> exprList);
+
+    void deleteEmpExprs(List<Integer> ids);
+
+    List<EmpExpr> getEmpExprById(Integer id);
+
+    void deleteEmpExprById(Integer id);
 }
