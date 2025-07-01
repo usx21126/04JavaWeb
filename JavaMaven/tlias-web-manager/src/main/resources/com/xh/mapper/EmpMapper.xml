@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.xh.mapper.EmpMapper">
-    <insert id="addEmp" parameterType="com.xh.entity.Emp">
+    <insert id="addEmp" parameterType="com.xh.entity.Emp" useGeneratedKeys="true" keyProperty="id">
         insert into emp(id, username, password, name, gender, phone, job, salary, image, entry_date, dept_id,
                         create_time, update_time)
-        values (#{id}, #{username}, #{password}, #{name}, #{gender}, #{phone}, #{job}, #{salary}, #{image},
+        values (null, #{username}, #{password}, #{name}, #{gender}, #{phone}, #{job}, #{salary}, #{image},
                 #{entryDate}, #{deptId}, #{createTime}, #{updateTime})
     </insert>
 
@@ -32,7 +32,7 @@
         order by entry_date desc
         limit #{offset},#{pageSize}
     </select>
-    <select id="getCount" parameterType="com.xh.entity.EmpQueryParam">
+    <select id="getCount" parameterType="com.xh.entity.EmpQueryParam" resultType="Integer">
         SELECT count(*) FROM emp
         <where>
             <if test="name != null and name != ''">

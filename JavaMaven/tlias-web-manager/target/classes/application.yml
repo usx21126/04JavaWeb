@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: tlias-web-manager
+  datasource:
+    url: jdbc:mysql://localhost:3306/tlias
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  servlet:
+    multipart:
+      #单个文件大小
+      max-file-size: 2MB
+      #单次请求上传文件大小
+      max-request-size: 10MB
+mybatis:
+  configuration:
+    #mybatis配置
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #数据库字段驼峰命名法自动匹配
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          support:
+            #开启Spring事务管理的debug级别日志
+            JdbcTransactionManager: debug
+aliyun:
+  oss:
+    # 自定义配置
+    # 阿里云OSS配置信息
+    endpoint: https://oss-cn-hangzhou.aliyuncs.com
+    bucket: 2746150991-tlias

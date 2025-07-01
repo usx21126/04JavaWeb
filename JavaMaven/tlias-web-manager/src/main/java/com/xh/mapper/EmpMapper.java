@@ -18,10 +18,15 @@ public interface EmpMapper {
      */
     List<Emp> getEmps(EmpQueryParam param);
 
+    /**
+     * 新增员工
+     * @param emp
+     */
     void addEmp(Emp emp);
 
     /**
-     * 查询总记录数
+     * 获取记录条数
+     * @param param
      * @return
      */
     Integer getCount(EmpQueryParam param);

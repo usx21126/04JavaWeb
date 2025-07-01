@@ -1,17 +1,10 @@
 package com.xh.controller;
 
-import com.xh.entity.Emp;
-import com.xh.entity.EmpQueryParam;
-import com.xh.entity.PageBean;
-import com.xh.entity.Result;
+import com.xh.entity.*;
 import com.xh.service.EmpService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDate;
-import java.util.Date;
 
 @Slf4j
 @RestController
@@ -32,9 +25,15 @@ public class EmpController {
         return Result.success(pb);
     }
 
+    /**
+     * 新增员工
+     * @param emp
+     * @return
+     */
     @PostMapping
     public Result addEmp(@RequestBody Emp emp) {
-        log.info("emp={}", emp);
+        log.info("emp={}",emp);
+        log.info("exprList={}", emp.getExprList());
         empService.addEmp(emp);
         return Result.success();
     }
