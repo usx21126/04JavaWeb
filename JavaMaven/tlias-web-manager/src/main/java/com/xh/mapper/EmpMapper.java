@@ -56,4 +56,6 @@ public interface EmpMapper {
      * @param emp
      */
     void updateEmp(Emp emp);
+
+    List<Emp> getAllEmps();
 }

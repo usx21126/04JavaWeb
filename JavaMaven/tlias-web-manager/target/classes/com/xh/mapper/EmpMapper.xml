@@ -96,4 +96,7 @@
                emp_expr.emp_id e_emp_id
         from emp left join emp_expr on emp.id = emp_expr.emp_id where emp.id = #{id}
     </select>
+    <select id="getAllEmps" resultType="com.xh.entity.Emp">
+        select * from emp
+    </select>
 </mapper>

@@ -76,4 +76,9 @@ public class EmpController {
         return Result.success();
     }
 
+    @GetMapping("/list")
+    public Result getAllEmps() {
+        List<Emp> empList = empService.getAllEmps();
+        return Result.success(empList);
+    }
 }
