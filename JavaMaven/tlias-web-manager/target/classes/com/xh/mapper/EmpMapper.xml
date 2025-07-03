@@ -99,4 +99,7 @@
     <select id="getAllEmps" resultType="com.xh.entity.Emp">
         select * from emp
     </select>
+    <select id="getEmpByUsernameAndPassword" resultType="com.xh.entity.Emp">
+        select * from emp where username = #{username} and password = #{password}
+    </select>
 </mapper>

@@ -58,4 +58,6 @@ public interface EmpMapper {
     void updateEmp(Emp emp);
 
     List<Emp> getAllEmps();
+
+    Emp getEmpByUsernameAndPassword(Emp emp);
 }

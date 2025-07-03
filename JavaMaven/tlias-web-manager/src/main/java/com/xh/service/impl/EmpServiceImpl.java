@@ -6,14 +6,13 @@ import com.xh.mapper.EmpLogMapper;
 import com.xh.mapper.EmpMapper;
 import com.xh.service.EmpLogService;
 import com.xh.service.EmpService;
+import com.xh.utils.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -117,5 +116,20 @@ public class EmpServiceImpl implements EmpService {
     @Override
     public List<Emp> getAllEmps() {
         return empMapper.getAllEmps();
+    }
+
+    @Override
+    public EmpLoginInfo login(Emp emp) {
+        Emp packedEmp = empMapper.getEmpByUsernameAndPassword(emp);
+        if (packedEmp != null) {
+            Map<String,Object> claims = new HashMap<>();
+            claims.put("id",packedEmp.getId());
+            claims.put("username",packedEmp.getUsername());
+
+
+            String token = JwtUtils.generateJwt(claims);
+            return new EmpLoginInfo(packedEmp.getId(),packedEmp.getUsername(),packedEmp.getName(),token);
+        }
+        return null;
     }
 }

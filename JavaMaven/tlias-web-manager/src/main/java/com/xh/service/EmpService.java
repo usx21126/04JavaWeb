@@ -1,6 +1,7 @@
 package com.xh.service;
 
 import com.xh.entity.Emp;
+import com.xh.entity.EmpLoginInfo;
 import com.xh.entity.EmpQueryParam;
 import com.xh.entity.PageBean;
 
@@ -19,4 +20,6 @@ public interface EmpService {
     void updateEmp(Emp emp);
 
     List<Emp> getAllEmps();
+
+    EmpLoginInfo login(Emp emp);
 }
