@@ -4,7 +4,7 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/tlias-web-manager/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-aop-quickstart/pom.xml" />
       </list>
     </option>
   </component>

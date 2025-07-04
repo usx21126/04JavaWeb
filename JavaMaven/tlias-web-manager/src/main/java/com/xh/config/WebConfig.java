@@ -1,4 +1,4 @@
-package com.xh;
+package com.xh.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

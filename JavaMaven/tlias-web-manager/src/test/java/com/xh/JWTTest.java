@@ -27,7 +27,7 @@ public class JWTTest  {
         try {
             Claims claims = Jwts.parser()
                     .setSigningKey("enetgterfre")
-                    .parseClaimsJws("eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJUb20iLCJleHAiOjE3NTE1Mzc4MDd9.GxadEWC3xxVuIy1knvWKeP9O4rAJjnmDXM8_p_oVpiA")
+                    .parseClaimsJws("eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJUb20iLCJleHAiOjE3NTE2MDg4NTN9.-2R81dl6wLcY_HXaZgqMrokCU8CQLxgVL5Z8rAWpFG4")
                     .getBody();
             System.out.println(claims);
         } catch (SignatureException  e) {
