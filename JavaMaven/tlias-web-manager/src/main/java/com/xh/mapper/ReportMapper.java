@@ -2,6 +2,7 @@ package com.xh.mapper;
 
 import com.xh.entity.DataBean;
 import com.xh.entity.EmpJobCount;
+import com.xh.entity.OperateLog;
 import com.xh.entity.StudentDegreeCount;
 import org.apache.ibatis.annotations.Mapper;
 

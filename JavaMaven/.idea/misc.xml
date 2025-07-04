@@ -4,7 +4,8 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/springboot-aop-quickstart/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-web-config/pom.xml" />
+        <option value="$PROJECT_DIR$/itheima-utils/pom.xml" />
       </list>
     </option>
   </component>

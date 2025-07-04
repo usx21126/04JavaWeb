@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 @Slf4j
-@RestControllerAdvice   //用于不花控制器Controller抛出的异常
+@RestControllerAdvice   //用于捕获控制器Controller抛出的异常
 public class GlobalExceptionHandler {
     @ExceptionHandler //指定处理何种异常
     public Result doException(Exception e ) {
